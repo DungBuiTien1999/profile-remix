@@ -47,16 +47,16 @@ export default function Header() {
     <React.Fragment>
       {isActiveMenu ? (
         <div
-          className="md:hidden cursor-pointer w-7 h-1 bg-black absolute top-10 right-8 origin-center rotate-45 z-30 close-menu"
+          className="md:hidden cursor-pointer w-7 h-1 bg-black fixed top-10 right-8 origin-center rotate-45 z-30 close-menu"
           onClick={onClickBurger}
         ></div>
       ) : (
         <div
-          className="md:hidden cursor-pointer w-7 h-1 bg-black absolute top-10 right-8 z-30 burger"
+          className="md:hidden cursor-pointer w-7 h-1 bg-black fixed top-10 right-8 z-30 burger"
           onClick={onClickBurger}
         ></div>
       )}
-      <div className="absolute top-10 right-10 hidden md:block">
+      <div className="fixed top-10 right-10 hidden md:block">
         <ul className="flex justify-center items-center text-base font-serif md:text-2xl">
           {items.map((item) => (
             <li
