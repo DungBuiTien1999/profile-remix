@@ -4,18 +4,20 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
-} from "remix";
-import type { MetaFunction, LinksFunction } from "remix";
-import styles from "./tailwind.css";
+  ScrollRestoration,
+} from 'remix';
+import type { MetaFunction, LinksFunction } from 'remix';
+import styles from './styles/tailwind.css';
+import stylesHeader from './styles/header.css';
+import MainLayout from './layouts/MainLayout';
 
 export const meta: MetaFunction = () => {
-  return { title: "Profile" };
+  return { title: 'Profile' };
 };
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: styles }];
-}
+  return [{ rel: 'stylesheet', href: styles }, { rel: 'stylesheet', href: stylesHeader }];
+};
 
 export default function App() {
   return (
@@ -27,10 +29,12 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <MainLayout>
+          <Outlet />
+        </MainLayout>
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
   );

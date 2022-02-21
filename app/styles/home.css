@@ -1,0 +1,74 @@
+.typography {
+  position: relative;
+  /* font-size: 2.25rem; */
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: rgb(20, 20, 20);
+}
+.typography::before {
+  display: block;
+  content: "i'm tien dung";
+  color: rgb(153, 153, 153);
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+  animation: glitch 0.8s linear infinite both running;
+
+}
+.typography::after {
+  display: block;
+  content: "i'm tien dung";
+  color: rgb(242, 107, 56);
+  z-index: -2;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+  animation: glitch 0.8s linear infinite reverse both running;
+}
+
+.typed-text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  animation: load 4s linear infinite running;
+}
+
+@keyframes glitch {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: -3px;
+    right: -3px;
+  }
+  50% {
+    top: 0;
+    left: 0;
+  }
+  75% {
+    top: 3px;
+    left: 3px;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes load {
+  0% {
+    max-width: 0;
+  }
+  50% {
+    max-width: 100%;
+  }
+  100% {
+    max-width: 0;
+  }
+}

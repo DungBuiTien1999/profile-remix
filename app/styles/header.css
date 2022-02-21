@@ -1,0 +1,37 @@
+.burger {
+    transition: all 0.5s ease-in-out;
+}
+.burger::before {
+    content: "";
+    width: 1.75rem;
+    height: 0.25rem;
+    background-color: black;
+    position: absolute;
+    top: -10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.burger::after {
+    content: "";
+    width: 1.75rem;
+    height: 0.25rem;
+    background-color: black;
+    position: absolute;
+    top: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.close-menu {
+    transition: all 0.5s ease-in-out;
+}
+
+.close-menu::after {
+    content: "";
+    width: 1.75rem;
+    height: 0.25rem;
+    background-color: black;
+    position: absolute;
+    transform-origin: center;
+    transform: rotate(90deg);
+    transition: all 0.5s ease-in-out;
+}
